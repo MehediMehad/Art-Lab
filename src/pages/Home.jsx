@@ -1,8 +1,11 @@
+import Benner from "../components/Benner";
+import Highest from "../components/Highest";
 
 const Home = () => {
     return (
         <div>
-            <h1>Home</h1>
+            <Benner></Benner>
+            <Highest></Highest>
         </div>
     );
 };
