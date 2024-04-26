@@ -1,24 +1,27 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { useForm } from "react-hook-form";
+import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
+import { toast } from "react-toastify";
 
 
 const Login = () => {
     const { logInUser } = useContext(AuthContext)
+    const [showPassword, setShowPassword] = useState(false)
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        const {email, password} = data
+        const { email, password } = data
         logInUser(email, password)
-        .then(result => {
-            alert('User LogIn Successfully')
-            console.log(result.user);
-        })
-        .catch(errors => {
-            alert(errors ,'invalid password try again')
-            console.log(errors);
-        })
+            .then(result => {
+                toast.success('User LogIn Successfully')
+                console.log(result.user);
+            })
+            .catch(errors => {
+                toast.error(errors, 'invalid password try again')
+                console.log(errors);
+            })
     }
 
     return (
@@ -39,8 +42,11 @@ const Login = () => {
                     <label className="label">
                         <span className="label-text">Password</span>
                     </label>
-                    <input type="password" {...register("password", { required: true })}
+                    <input type={showPassword ? "text" : "password"} {...register("password", { required: true })}
                         placeholder="password" className="input input-bordered" required />
+                    <div className="relative">
+                        <p onClick={() => setShowPassword(!showPassword)} className=" cursor-pointer absolute bottom-4 md:left-[350px] left-[290px]"> {showPassword ? <BsEyeSlash></BsEyeSlash> : <BsEyeFill></BsEyeFill>} </p>
+                    </div>
                     <div className="">
                         {errors.password && <p className="text-red-500 text-sm">This filed is required </p>}
                     </div>

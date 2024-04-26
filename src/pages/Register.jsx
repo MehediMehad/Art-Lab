@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form"
+import { toast } from 'react-toastify';
 import { useContext, useEffect, useState } from "react";
 import { BsEyeFill, BsEyeSlash } from "react-icons/bs"
 import { AuthContext } from "../provider/AuthProvider";
@@ -19,8 +20,11 @@ const Register = () => {
         console.log(image, fullName, email, password);
         createUser(email, password)
         .then(result =>{
-            alert('register success')
+            toast.success('Register Successfully')
             console.log(result);
+        })
+        .catch(() => {
+            toast.error("email-already-in-use")
         })
     }
     useEffect(()=>{
