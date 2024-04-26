@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 
 const Login = () => {
-    const { logInUser } = useContext(AuthContext)
+    const { logInUser, googleLogIn, githubLogIn } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -66,10 +66,12 @@ const Login = () => {
             </form>
             <div className="card-body -mt-12">
                 <div className="form-control ">
-                    <button className="btn bg-[#4d4d4ddf] text-white text-base font-bold hover:bg-[#4d4d4ddf] hover:scale-105">Login with Github</button>
+                    <button onClick={() => googleLogIn()}
+                     className="btn bg-[#db4437] text-white text-base font-bold hover:bg-[#db4437] hover:scale-105">Login with Google</button>
                 </div>
                 <div className="form-control ">
-                    <button className="btn bg-[#db4437] text-white text-base font-bold hover:bg-[#db4437] hover:scale-105">Login with Google</button>
+                    <button onClick={() => githubLogIn()}
+                     className="btn bg-[#4d4d4ddf] text-white text-base font-bold hover:bg-[#4d4d4ddf] hover:scale-105">Login with Github</button>
                 </div>
             </div>
 
