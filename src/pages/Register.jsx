@@ -16,6 +16,7 @@ const Register = () => {
     } = useForm()
     const handleRegister = (data) => {
         const { email, password, image, fullName } = data
+        console.log(image, fullName, email, password);
         createUser(email, password)
         .then(result =>{
             alert('register success')
