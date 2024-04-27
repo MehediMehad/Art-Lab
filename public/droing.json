@@ -1,12 +1,12 @@
  [
       {
         "name": "Enchanted Twilight",
-        "category": "Landscape Painting",
+        "category": "Landscape painting",
         "description": "A mystical twilight scene where the sky blends hues of lavender and gold over rolling hills.",
         "price": "$280",
         "stock": "In stock",
         "customization": "Yes",
-        "image": "https://cdn.shopify.com/s/files/1/0625/3818/6989/files/1_07e7770a-7a1a-4dfe-83be-b502b2d47d57.jpg?v=1677310581",
+        "image": "https://i.ibb.co/wwWB76K/Landscape-painting.jpg",
         "rating": 4.7,
         "processing_time": "2 weeks"
       },
