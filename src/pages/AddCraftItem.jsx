@@ -14,6 +14,20 @@ const AddCraftItem = () => {
         const photo = form.photo.value
         const newItem ={name, stock, photo, price, rating, category, customization, description}
         console.log(newItem);
+
+        // send data to the server
+        fetch('http://localhost:5000/items', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newItem)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+        })
+
     }
 
 
@@ -112,7 +126,7 @@ const AddCraftItem = () => {
                     </div>
                 </div> */}
 
-                <input type="submit" value="Add Coffee" className="btn btn-block hover:bg-[#D2B48C] text-xl text-[#331A15] bg-[#E3B77B]" />
+                <input type="submit" value="Add Item" className="btn btn-block hover:bg-[#D2B48C] text-xl text-[#331A15] bg-[#E3B77B]" />
             </form>
         </div>
     );
