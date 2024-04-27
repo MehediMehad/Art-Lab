@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import { toast } from 'react-toastify';
 import { useContext, useEffect, useState } from "react";
@@ -8,6 +8,8 @@ import { AuthContext } from "../provider/AuthProvider";
 const Register = () => {
     
     const {createUser }= useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
     const [showPassword, setShowPassword] = useState(false)
     const {
         register,
@@ -20,6 +22,7 @@ const Register = () => {
         console.log(image, fullName, email, password);
         createUser(email, password)
         .then(result =>{
+            navigate(location?.state ? location.state : '/')
             toast.success('Register Successfully')
             console.log(result);
         })

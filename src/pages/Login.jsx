@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { useForm } from "react-hook-form";
 import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
@@ -9,14 +9,50 @@ import { toast } from "react-toastify";
 const Login = () => {
     const { logInUser, googleLogIn, githubLogIn } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
-
+    const location = useLocation();
+    const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm();
+
+
+
+
+    // google login
+    const handleGoogleLogin = () => {
+        googleLogIn()
+            .then(result => {
+                if (result.user) {
+                    navigate(location?.state ? location.state : '/')
+                    toast.success('Login Successful')
+                }
+                // toast.success('Register Successful')
+                // navigate('/')
+            })
+    }
+
+    // google login
+    const handlegithubLogin = () => {
+        githubLogIn()
+            .then(result => {
+                if (result.user) {
+                    navigate(location?.state ? location.state : '/')
+                    toast.success('Login Successful')
+                }
+                // toast.success('Register Successful')
+                // navigate('/')
+            })
+    }
+
+
+
+    // 
     const onSubmit = data => {
         const { email, password } = data
         logInUser(email, password)
             .then(result => {
                 toast.success('User LogIn Successfully')
                 console.log(result.user);
+                // navigate after login
+                navigate(location?.state ? location.state : '/')
             })
             .catch(errors => {
                 toast.error(errors, 'invalid password try again')
@@ -66,12 +102,12 @@ const Login = () => {
             </form>
             <div className="card-body -mt-12">
                 <div className="form-control ">
-                    <button onClick={() => googleLogIn()}
-                     className="btn bg-[#db4437] text-white text-base font-bold hover:bg-[#db4437] hover:scale-105">Login with Google</button>
+                    <button onClick={() => handleGoogleLogin()}
+                        className="btn bg-[#db4437] text-white text-base font-bold hover:bg-[#db4437] hover:scale-105">Login with Google</button>
                 </div>
                 <div className="form-control ">
-                    <button onClick={() => githubLogIn()}
-                     className="btn bg-[#4d4d4ddf] text-white text-base font-bold hover:bg-[#4d4d4ddf] hover:scale-105">Login with Github</button>
+                    <button onClick={() => handlegithubLogin()}
+                        className="btn bg-[#4d4d4ddf] text-white text-base font-bold hover:bg-[#4d4d4ddf] hover:scale-105">Login with Github</button>
                 </div>
             </div>
 

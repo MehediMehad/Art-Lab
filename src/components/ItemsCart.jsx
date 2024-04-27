@@ -5,7 +5,7 @@ const ItemsCart = () => {
         <> <h1 className="text-8xl text-center font-serif">The Art Gallery</h1>
             <div className=" gap-10 lg:mx-24 grid grid-cols-4 my-5">
                 {/* ---------- */}
-                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8 col-span-1">
+                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8  col-span-4 md:col-span-2 lg:col-span-1">
                     <figure><img src="https://demo.curlythemes.com/art-gallery-wp/wp-content/uploads/sites/24/2017/09/BeautifulOriginalOilPaintingoffloweringtreeinthesummergardenLandscapeOnCanvas.jpg" alt="Shoes" /></figure>
                     <div className="px-2">
                         <h2 className="card-title">
@@ -21,7 +21,7 @@ const ItemsCart = () => {
                     </div>
                 </div>
                 {/* ---------- */}
-                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8 col-span-1">
+                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8  col-span-4 md:col-span-2 lg:col-span-1">
                     <figure><img src="https://demo.curlythemes.com/art-gallery-wp/wp-content/uploads/sites/24/2017/09/BeautifulOriginalOilPaintingoffloweringtreeinthesummergardenLandscapeOnCanvas.jpg" alt="Shoes" /></figure>
                     <div className="px-2">
                         <h2 className="card-title">
@@ -36,7 +36,7 @@ const ItemsCart = () => {
                     </div>
                 </div>
                 {/* ---------- */}
-                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8 col-span-1">
+                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8  col-span-4 md:col-span-2 lg:col-span-1">
                     <figure><img src="https://demo.curlythemes.com/art-gallery-wp/wp-content/uploads/sites/24/2017/09/BeautifulOriginalOilPaintingoffloweringtreeinthesummergardenLandscapeOnCanvas.jpg" alt="Shoes" /></figure>
                     <div className="px-2">
                         <h2 className="card-title">
@@ -51,7 +51,7 @@ const ItemsCart = () => {
                     </div>
                 </div>
                 {/* ---------- */}
-                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8 col-span-1">
+                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8  col-span-4 md:col-span-2 lg:col-span-1">
                     <figure><img src="https://demo.curlythemes.com/art-gallery-wp/wp-content/uploads/sites/24/2017/09/BeautifulOriginalOilPaintingoffloweringtreeinthesummergardenLandscapeOnCanvas.jpg" alt="Shoes" /></figure>
                     <div className="px-2">
                         <h2 className="card-title">
@@ -66,7 +66,7 @@ const ItemsCart = () => {
                     </div>
                 </div>
                 {/* ---------- */}
-                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8 col-span-1">
+                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8  col-span-4 md:col-span-2 lg:col-span-1">
                     <figure><img src="https://demo.curlythemes.com/art-gallery-wp/wp-content/uploads/sites/24/2017/09/BeautifulOriginalOilPaintingoffloweringtreeinthesummergardenLandscapeOnCanvas.jpg" alt="Shoes" /></figure>
                     <div className="px-2">
                         <h2 className="card-title">
@@ -81,7 +81,7 @@ const ItemsCart = () => {
                     </div>
                 </div>
                 {/* ---------- */}
-                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8 col-span-1">
+                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8  col-span-4 md:col-span-2 lg:col-span-1">
                     <figure><img src="https://demo.curlythemes.com/art-gallery-wp/wp-content/uploads/sites/24/2017/09/BeautifulOriginalOilPaintingoffloweringtreeinthesummergardenLandscapeOnCanvas.jpg" alt="Shoes" /></figure>
                     <div className="px-2">
                         <h2 className="card-title">
@@ -96,7 +96,7 @@ const ItemsCart = () => {
                     </div>
                 </div>
                 {/* ---------- */}
-                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8 col-span-1">
+                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8  col-span-4 md:col-span-2 lg:col-span-1">
                     <figure><img src="https://demo.curlythemes.com/art-gallery-wp/wp-content/uploads/sites/24/2017/09/BeautifulOriginalOilPaintingoffloweringtreeinthesummergardenLandscapeOnCanvas.jpg" alt="Shoes" /></figure>
                     <div className="px-2">
                         <h2 className="card-title">
@@ -111,7 +111,7 @@ const ItemsCart = () => {
                     </div>
                 </div>
                 {/* ---------- */}
-                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8 col-span-1">
+                <div className="card w-96 bg-base-100 shadow-xl rounded-none border-8  col-span-4 md:col-span-2 lg:col-span-1">
                     <figure><img src="https://demo.curlythemes.com/art-gallery-wp/wp-content/uploads/sites/24/2017/09/BeautifulOriginalOilPaintingoffloweringtreeinthesummergardenLandscapeOnCanvas.jpg" alt="Shoes" /></figure>
                     <div className="px-2">
                         <h2 className="card-title">

@@ -1,0 +1,55 @@
+ [
+      {
+        "name": "Enchanted Twilight",
+        "category": "Landscape Painting",
+        "description": "A mystical twilight scene where the sky blends hues of lavender and gold over rolling hills.",
+        "price": "$280",
+        "stock": "In stock",
+        "customization": "Yes",
+        "image": "https://cdn.shopify.com/s/files/1/0625/3818/6989/files/1_07e7770a-7a1a-4dfe-83be-b502b2d47d57.jpg?v=1677310581",
+        "rating": 4.7,
+        "processing_time": "2 weeks"
+      },
+      {
+        "name": "Ethereal Elegance",
+        "category": "Portrait Drawing",
+        "description": "A graceful figure with eyes that hold secrets and lips curved in a gentle smile.",
+        "price": "$150",
+        "rating": 4.5,
+        "processing_time": "1 week"
+      },
+      {
+        "name": "Whimsical Blooms",
+        "category": "Watercolor Painting",
+        "description": "Vibrant flowers dancing in a sun-kissed garden, their petals alive with color.",
+        "price": "$90",
+        "rating": 4.8,
+        "processing_time": "3 days"
+      },
+      {
+        "name": "Celestial Symphony",
+        "category": "Oil Painting",
+        "description": "Abstract swirls of cosmic energy, merging galaxies and stardust.",
+        "price": "$480",
+        "rating": 4.9,
+        "processing_time": "4 weeks"
+      },
+      {
+        "name": "Soulful Wanderer",
+        "category": "Charcoal Sketching",
+        "description": "A traveler lost in thought, captured in expressive charcoal strokes.",
+        "price": "$70",
+        "rating": 4.6,
+        "processing_time": "5 days"
+      },
+      {
+        "name": "Galactic Guardian",
+        "category": "Cartoon Drawing",
+        "description": "A quirky cosmic hero with star-shaped goggles and a comet cape.",
+        "price": "$40",
+        "rating": 4.3,
+        "processing_time": "1 week"
+      }
+    ]
+
+  

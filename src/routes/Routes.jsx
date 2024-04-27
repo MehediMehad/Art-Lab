@@ -3,6 +3,8 @@ import Main from "../layouts/Main";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import AddCraftItem from "../pages/AddCraftItem";
+import PrivateRoute from "../components/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +22,10 @@ const router = createBrowserRouter([
         {
           path:'/register',
           element:<Register></Register>
+        },
+        {
+          path:'/additem',
+          element:<PrivateRoute> <AddCraftItem></AddCraftItem> </PrivateRoute>
         },
       ]
     },
