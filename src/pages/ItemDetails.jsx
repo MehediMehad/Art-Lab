@@ -3,7 +3,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 const ItemDetails = () => {
     const items = useLoaderData()
     const {id} = useParams()
-    const item = items.find(item => item._id == id )
+    const item = items.find(item => item?._id == id )
     const { name, stock, processing, photo, price, rating, category, customization, description} =item
     return (
 <div className="lg:flex lg:flex-col lg:mx-48 p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
