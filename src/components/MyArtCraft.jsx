@@ -61,7 +61,9 @@ const MyArtCraft = () => {
                     <div className="card-actions gap-0 justify-around items-center">
                         <button onClick={() => handleDelete(p._id)}
                          className=" mb-2 btn btn-sm right-2 text-white rounded-none w-1/3 bg-purple-600  hover:bg-[#491291]">Delete</button>
-                        <Link to ={`/item/${p._id}`} className=" mb-2 btn btn-sm right-2 text-white rounded-none w-1/3 bg-secondary  hover:bg-[#9a1a7c]">Update</Link>
+                         <Link to={`/update/${p._id}`} className=" mb-2 btn btn-sm right-2 text-white rounded-none w-1/3 bg-secondary  hover:bg-[#9a1a7c]">
+                        <button>Update</button>
+                         </Link>
                         <Link to ={`/item/${p._id}`} className=" mb-2 btn btn-sm right-2 text-white rounded-none w-1/3 bg-[#f29441]  hover:bg-[#7a3a05]">View Details</Link>
                     </div>
                 </div>
