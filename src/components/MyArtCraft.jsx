@@ -34,7 +34,7 @@ const MyArtCraft = () => {
                 .then(data =>{
                     console.log(data)
                     if (data.deletedCount > 0) {
-                        Swal.fire({
+                        Swal.fire({   
                             title: "Deleted!",
                             text: "Your file has been deleted.",
                             icon: "success"
@@ -48,7 +48,7 @@ const MyArtCraft = () => {
 
 
     return (
-        <div className="gap-10 lg:mx-24 grid grid-cols-4 my-5 mt-20" >
+        <div className=" gap-10 lg:mx-24 grid grid-cols-4 my-5 mt-20" >
             {
                 item.map(p => <div key={p._id} className="card w-96 bg-base-100  shadow-xl rounded-none border-8  col-span-4 md:col-span-2 lg:col-span-1">
                 <figure><img className="h-[350px] object-cover hover:scale-105  " src={p?.photo} alt="Shoes" /></figure>
@@ -62,7 +62,7 @@ const MyArtCraft = () => {
                         <button onClick={() => handleDelete(p._id)}
                          className=" mb-2 btn btn-sm right-2 text-white rounded-none w-1/3 bg-purple-600  hover:bg-[#491291]">Delete</button>
                         <Link to ={`/item/${p._id}`} className=" mb-2 btn btn-sm right-2 text-white rounded-none w-1/3 bg-secondary  hover:bg-[#9a1a7c]">Update</Link>
-                        <Link to ={`/item/${p._id}`} className=" mb-2 btn btn-sm right-2 text-white rounded-none w-1/3 bg-[#f59546]  hover:bg-[#7a3a05]">View Details</Link>
+                        <Link to ={`/item/${p._id}`} className=" mb-2 btn btn-sm right-2 text-white rounded-none w-1/3 bg-[#f29441]  hover:bg-[#7a3a05]">View Details</Link>
                     </div>
                 </div>
             </div>  )
