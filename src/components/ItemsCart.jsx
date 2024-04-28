@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const ItemsCart = ({item}) => {
-    const { name, photo, rating, category} = item
+    const { _id, name, photo, rating, category} = item
     return (
         <>
             {/* ---------- */}
@@ -15,7 +16,7 @@ const ItemsCart = ({item}) => {
                     <p className="font-bold">₹399.00</p>
                     <div className="card-actions justify-between  items-center">
                         <div className="badge badge-outline">{category}</div>
-                        <button className=" mb-2 btn btn-sm right-2 rounded-none bg-orange-300 text-black hover:bg-orange-300">View Details</button>
+                        <Link to ={`/item/${_id}`} className=" mb-2 btn btn-sm right-2 rounded-none bg-orange-300 text-black hover:bg-orange-300">View Details</Link>
                     </div>
                 </div>
             </div>

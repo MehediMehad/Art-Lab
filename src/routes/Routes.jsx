@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AddCraftItem from "../pages/AddCraftItem";
 import PrivateRoute from "../components/PrivateRoute";
+import ItemDetails from "../pages/ItemDetails";
 
 const router = createBrowserRouter([
     {
@@ -15,6 +16,11 @@ const router = createBrowserRouter([
             path:'/',
             element:<Home></Home>,
             loader: () => fetch('http://localhost:5000/item')
+        },
+        {
+          path:'/item/:id',
+          element:<PrivateRoute> <ItemDetails></ItemDetails> </PrivateRoute>,
+          loader: () => fetch('http://localhost:5000/item')
         },
         {
           path:'/login',
