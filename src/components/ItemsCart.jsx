@@ -16,7 +16,7 @@ const ItemsCart = ({item}) => {
                     <p className="font-bold">{price}</p>
                     <div className="card-actions justify-between  items-center">
                         <div className="badge badge-outline">{category}</div>
-                        <Link to ={`/item/${_id}`} className=" mb-2 btn btn-sm right-2 rounded-none bg-orange-300 text-black hover:bg-orange-300">View Details</Link>
+                        <Link to ={`/item/${_id}`} className=" mb-2 btn btn-sm right-2 rounded-none bg-[#fc8b2d]  hover:bg-[#fc8b2d] text-white">View Details</Link>
                     </div>
                 </div>
             </div>

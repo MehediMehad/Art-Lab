@@ -24,7 +24,7 @@ const Home = () => {
             <h1 className="text-8xl text-center font-serif mt-9">The Art Gallery</h1>
             <div className="gap-10 lg:mx-24 grid grid-cols-4 my-5">
                 {
-                    items.map(item => <ItemsCart 
+                    items.slice(0, 8).map(item => <ItemsCart 
                         key={item._id}
                         item={item}
                         ></ItemsCart> )
