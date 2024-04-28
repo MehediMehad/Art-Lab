@@ -4,9 +4,12 @@ import Highest from "../components/Highest";
 import ItemsCart from "../components/ItemsCart";
 import { AuthContext } from "../provider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
+import LatestWorks from "../components/LatestWorks";
+import OurTeam from "../components/OurTeam";
 
 const Home = () => {
 
+    // const {user} = useContext(AuthContext)
     const items = useLoaderData()
 
 
@@ -25,8 +28,11 @@ const Home = () => {
                         key={item._id}
                         item={item}
                         ></ItemsCart> )
+                    // items.filter(item => item.email == user.email ).map(item => <ItemsCart key={item._id}></ItemsCart>)
                 }
             </div>
+            <LatestWorks></LatestWorks>
+            <OurTeam></OurTeam>
         </div>
     );
 };

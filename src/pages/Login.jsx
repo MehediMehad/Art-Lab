@@ -50,9 +50,22 @@ const Login = () => {
         logInUser(email, password)
             .then(result => {
                 toast.success('User LogIn Successfully')
-                console.log(result.user);
+                console.log('ii',result.user);
                 // navigate after login
                 navigate(location?.state ? location.state : '/')
+                const user = {email}
+                
+                fetch('http://localhost:5000/user', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
             })
             .catch(errors => {
                 toast.error(errors, 'invalid password try again')

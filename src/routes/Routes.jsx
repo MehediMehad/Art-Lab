@@ -6,6 +6,7 @@ import Register from "../pages/Register";
 import AddCraftItem from "../pages/AddCraftItem";
 import PrivateRoute from "../components/PrivateRoute";
 import ItemDetails from "../pages/ItemDetails";
+import MyArtCraft from "../components/MyArtCraft";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         {
           path:'/additem',
           element:<PrivateRoute> <AddCraftItem></AddCraftItem> </PrivateRoute>
+        },
+        {
+          path:'/myart',
+          element:<PrivateRoute> <MyArtCraft></MyArtCraft> </PrivateRoute>
         },
       ]
     },

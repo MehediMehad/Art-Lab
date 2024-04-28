@@ -8,7 +8,7 @@ const ItemDetails = () => {
     return (
 <div className="lg:flex lg:flex-col lg:mx-48 p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
 	<div className=" lg:flex gap-x-5">
-		<img src={photo} alt="" className=" shadow-xl  mb-4 lg:h-[500px] dark:bg-gray-500 " />
+		<img src={photo} alt="" className=" object-cover shadow-xl  mb-4 lg:h-[500px] dark:bg-gray-500 " />
         <div className=" pt-8 md:space-y-6 space-y-3">
         <h2 className="mb-1 text-xl font-semibold"><span className="font-bold">Name:</span> {name}</h2>
 		<p className="text-xl dark:text-gray-600"><span className="font-bold">Description:</span> {description}</p>

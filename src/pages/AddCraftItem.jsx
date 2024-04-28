@@ -1,6 +1,9 @@
 import Swal from 'sweetalert2'
+import { AuthContext } from '../provider/AuthProvider';
+import { useContext } from 'react';
 const AddCraftItem = () => {
-
+    const { user } = useContext(AuthContext)
+    console.log('from add item', user);
     const handleAddItem = e => {
         e.preventDefault()
         const form = e.target;
@@ -13,7 +16,8 @@ const AddCraftItem = () => {
         const description = form.description.value
         const photo = form.photo.value
         const processing = form.processing.value
-        const newItem = { name, stock, processing, photo, price, rating, category, customization, description }
+        const email = user.email
+        const newItem = { email ,name, stock, processing, photo, price, rating, category, customization, description }
         console.log(newItem);
 
         // send data to the server
