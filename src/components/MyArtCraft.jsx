@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 const MyArtCraft = () => {
     const { user } = useContext(AuthContext)
     const [item, setItem] = useState([])
+    const [filtered, setFiltered] = useState([])
     const [control, setControl] = useState(false)
     console.log(user);
     useEffect(() => {
@@ -13,6 +14,7 @@ const MyArtCraft = () => {
             .then(res => res.json())
             .then(data => {
                 setItem(data);
+                setFiltered(data)
             })
     }, [user, control])
 
@@ -47,25 +49,34 @@ const MyArtCraft = () => {
         });
     }
 
+    const hanledCusYes = () => {
+        const data = item.filter(p => p.customization == 'Yes' || p.customization == 'yes')
+        setFiltered(data)
+    }
+    const hanledCusNo = () => {
+        const data = item.filter(p => p.customization == 'No' || p.customization == 'no')
+        setFiltered(data)
+    }
+    const hanledCusAll = () => {
+        const data = item.filter(p => p.customization == 'No' || p.customization == 'no' || p.customization == 'Yes' || p.customization == 'yes' )
+        setFiltered(data)
+    }
 
 
     return (
         <>
-<ul className="menu menu-horizontal bg-base-200  w-40 ml-24 mt-8 z-10 ">
-  <li>
-    <details >
-      <summary>Customization</summary>
-      <ul className="rounded-none bg-gray-300">
-        <li><button>Yes</button></li>
-        <li><button>No</button></li>
-      </ul>
-    </details>
-  </li>
+            <details className="dropdown border-none bg-[#ffed49] md:ml-24 my-10">
+                <summary className="m-1 btn bg-[#ffed49] border-none hover:bg-[#ffed49] text-slate-900 text-lg">Customization</summary>
+                <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-48">
+                    <li><button onClick={hanledCusAll}>All</button></li>
+                    <li><button onClick={hanledCusYes}>Yes</button></li>
+                    <li><button onClick={hanledCusNo}>No</button></li>
+                </ul>
+            </details>
 
-</ul>
-            <div className=" gap-10 lg:mx-24 grid grid-cols-4 my-5 mt-24" >
+            <div className=" gap-10 lg:mx-24 grid grid-cols-4 my-5" >
                 {
-                    item.map(p => <div key={p._id} className="card w-96 bg-base-100  shadow-xl rounded-none border-8  col-span-4 md:col-span-2 lg:col-span-1">
+                    filtered.map(p => <div key={p._id} className="card w-96 bg-base-100  shadow-xl rounded-none border-8  col-span-4 md:col-span-2 lg:col-span-1">
                         <figure><img className="h-[350px] object-cover hover:scale-105  " src={p?.photo} alt="Shoes" /></figure>
                         <div className="px-2">
                             <h2 className="card-title mt-2 pl-2">
