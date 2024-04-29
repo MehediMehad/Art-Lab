@@ -55,7 +55,7 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/')
                 const user = {email}
                 
-                fetch('http://localhost:5000/user', {
+                fetch('https://assignment-ten-server-five.vercel.app/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

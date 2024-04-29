@@ -20,17 +20,17 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader: () => fetch('http://localhost:5000/item')
+            loader: () => fetch('https://assignment-ten-server-five.vercel.app/item')
         },
         {
             path:'/allCard',
             element: <PrivateRoute><AllArtCraftItems></AllArtCraftItems></PrivateRoute>,
-            loader: () => fetch('http://localhost:5000/item')
+            loader: () => fetch('https://assignment-ten-server-five.vercel.app/item')
         },
         {
           path:'/item/:id',
           element:<PrivateRoute> <ItemDetails></ItemDetails> </PrivateRoute>,
-          loader: () => fetch('http://localhost:5000/item')
+          loader: () => fetch('https://assignment-ten-server-five.vercel.app/item')
         },
         {
           path:'/login',
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         {
           path:'/update/:id',
           element:<PrivateRoute> <UpdateItem></UpdateItem> </PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
+          loader: ({params}) => fetch(`https://assignment-ten-server-five.vercel.app/item/${params.id}`)
 
         },
         {

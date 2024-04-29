@@ -10,7 +10,7 @@ const MyArtCraft = () => {
     const [control, setControl] = useState(false)
     console.log(user);
     useEffect(() => {
-        fetch(`http://localhost:5000/myProduct/${user?.email}`)
+        fetch(`https://assignment-ten-server-five.vercel.app/myProduct/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data);
@@ -30,7 +30,7 @@ const MyArtCraft = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/item/${_id}`, {
+                fetch(`https://assignment-ten-server-five.vercel.app/item/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

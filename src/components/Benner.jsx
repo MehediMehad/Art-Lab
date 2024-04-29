@@ -10,7 +10,7 @@ const Benner = () => {
             <div className=" md:w-[667px] col-span-2 lg:col-span-1 items-center content-center">
                 <div className="lg:pl-4">
                     <p className="text-secondary font-bold text-3xl">Art <span className="text-primary">Lab</span></p>
-                    <p className='md:text-7xl text-3xl mt-2 font-light font-serif'>Innovation, Perfection And Creativity At It's Best Design</p>
+                    <p className='md:text-7xl text-3xl mt-2 font-light font-serif'>Innovation, Perfection And Creativity At It&apos;s Best Design</p>
                 </div>
             </div>
             <div className="lg:col-span-1 col-span-2">
@@ -24,13 +24,9 @@ const Benner = () => {
                     }
 
                 >
+                    <SwiperSlide><img className='w-[834px] h-[574px]' src="https://i.ibb.co/C0ztZY5/Abstract-Oil-Painting.jpg" alt="" /></SwiperSlide>
                     <SwiperSlide><img className='w-[834px] h-[574px]' src="https://cdn.shopify.com/s/files/1/0625/3818/6989/files/1_07e7770a-7a1a-4dfe-83be-b502b2d47d57.jpg?v=1677310581" alt="" /></SwiperSlide>
-                    <SwiperSlide><img className='w-[834px] h-[574px]' src="https://cdn.shopify.com/s/files/1/0625/3818/6989/files/1_07e7770a-7a1a-4dfe-83be-b502b2d47d57.jpg?v=1677310581" alt="" /></SwiperSlide>
-                    <SwiperSlide><img className='w-[834px] h-[574px]' src="https://cdn.shopify.com/s/files/1/0625/3818/6989/files/1_07e7770a-7a1a-4dfe-83be-b502b2d47d57.jpg?v=1677310581" alt="" /></SwiperSlide>
-                    <SwiperSlide><img className='w-[834px] h-[574px]' src="https://cdn.shopify.com/s/files/1/0625/3818/6989/files/1_07e7770a-7a1a-4dfe-83be-b502b2d47d57.jpg?v=1677310581" alt="" /></SwiperSlide>
-                    <SwiperSlide><img className='w-[834px] h-[574px]' src="https://cdn.shopify.com/s/files/1/0625/3818/6989/files/1_07e7770a-7a1a-4dfe-83be-b502b2d47d57.jpg?v=1677310581"alt="" /></SwiperSlide>
-                    <SwiperSlide><img className='w-[834px] h-[574px]' src="https://cdn.shopify.com/s/files/1/0625/3818/6989/files/1_07e7770a-7a1a-4dfe-83be-b502b2d47d57.jpg?v=1677310581" alt="" /></SwiperSlide>
-                    <SwiperSlide><img className='w-[834px] h-[574px]' src="https://cdn.shopify.com/s/files/1/0625/3818/6989/files/1_07e7770a-7a1a-4dfe-83be-b502b2d47d57.jpg?v=1677310581" alt="" /></SwiperSlide>
+                    <SwiperSlide><img className='w-[834px] h-[574px]' src="https://i.ibb.co/J2cN0T5/Generate-Incredible.png"alt="" /></SwiperSlide>
                 </Swiper> 
             </div>
         </div>
