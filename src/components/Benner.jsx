@@ -24,7 +24,9 @@ const Benner = () => {
                     }
 
                 >
+                    <SwiperSlide><img className='w-[834px] h-[574px]' src="https://i.ibb.co/WvvMJ1K/GQ-OCTOBER-SOCIAL-ONLINE-Header-2.webp" alt="" /></SwiperSlide>
                     <SwiperSlide><img className='w-[834px] h-[574px]' src="https://i.ibb.co/C0ztZY5/Abstract-Oil-Painting.jpg" alt="" /></SwiperSlide>
+                    <SwiperSlide><img className='w-[834px] h-[574px]' src="https://i.ibb.co/SdZZRd7/DALL-E-2023-11-30-12-59-03-A-whimsical-and-colorful-illustration-of-an-artist-surrounded-by-a-whirlw.webp" alt="" /></SwiperSlide>
                     <SwiperSlide><img className='w-[834px] h-[574px]' src="https://cdn.shopify.com/s/files/1/0625/3818/6989/files/1_07e7770a-7a1a-4dfe-83be-b502b2d47d57.jpg?v=1677310581" alt="" /></SwiperSlide>
                     <SwiperSlide><img className='w-[834px] h-[574px]' src="https://i.ibb.co/J2cN0T5/Generate-Incredible.png"alt="" /></SwiperSlide>
                 </Swiper> 

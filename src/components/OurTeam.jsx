@@ -2,7 +2,7 @@
 
 const OurTeam = () => {
     return (
-        <section className="py-6 dark:bg-gray-100 dark:text-gray-800">
+        <section className="py-6 dark:bg-gray-100 dark:text-gray-800 mt-20">
         <div className="container flex flex-col items-center justify-center p-4 mx-auto space-y-8 sm:p-10">
             <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">Our team</h1>
             <p className="max-w-2xl text-center dark:text-gray-600 text-3xl">Together, we make the perfect team and Achieve the impossible.</p>
