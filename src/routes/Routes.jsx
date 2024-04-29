@@ -9,11 +9,13 @@ import ItemDetails from "../pages/ItemDetails";
 import MyArtCraft from "../components/MyArtCraft";
 import AllArtCraftItems from "../pages/AllArtCraftItems";
 import UpdateItem from "../pages/UpdateItem";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path:'/',

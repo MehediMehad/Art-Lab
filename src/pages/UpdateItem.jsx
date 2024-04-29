@@ -1,10 +1,12 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 
 
 const UpdateItem = () => {
+    const navigate = useNavigate()
+
     const item = useLoaderData()
     const {_id, name, stock, processing, photo, price, rating, category, customization, description} =item
     const { user } = useContext(AuthContext)
@@ -36,13 +38,14 @@ const UpdateItem = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
                         text: 'Updated Successfully ',
                         icon: 'success',
                         confirmButtonText: 'Okay'
                       })
+                      navigate(location?.state ? location.state : '/myart')
                 }
             })
 
