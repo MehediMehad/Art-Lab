@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import Benner from "../components/Benner";
-import Highest from "../components/Highest";
 import ItemsCart from "../components/ItemsCart";
 import { AuthContext } from "../provider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
@@ -20,8 +19,26 @@ const Home = () => {
     return (
         <div>
             <Benner></Benner>
-            <Highest></Highest>
-            <h1 className="text-8xl text-center font-serif mt-9">The Art Gallery</h1>
+            <div className="lg:mx-24 mt-20  mb-8 lg:flex lg:gap-24 justify-stretch">
+            <div className="border-l-4 items-center content-center p-10 border-[#f314fa] ">
+                <p className="uppercase font-bold text-lg  text-[#8f33ff]">Art <span className="text-[#f314fa]">Lab</span></p>
+                {/* <p className="uppercase font-bold text-base text-[#f314fa]" >Provide</p> */}
+            </div>
+            <div className="p-10 border-b-4 border-[#f314fa]  ">
+                <p className="uppercase font-bold text-base text-[#8f33ff]">Deliver</p>
+                <p className="uppercase font-bold text-base text-[#f314fa]" > Best Paintings</p>
+            </div>
+            <div className=" p-10 border-b-4 border-[#f314fa]  ">
+                <p className="uppercase font-bold text-base text-[#8f33ff]">Our Product</p>
+                <p className="uppercase  font-bold text-base text-[#f314fa]" >Latest & Original</p>
+            </div>
+            <div className="border-b-4  p-10 border-[#f314fa]  ">
+                <p className="uppercase font-bold text-base text-[#8f33ff]">We Provide</p>
+                <p className="uppercase font-bold text-base text-[#f314fa]" >Chip Cost</p>
+            </div>
+
+            </div>
+            
             <div className="gap-10 lg:mx-24 grid grid-cols-4 my-5">
                 {
                     items.slice(0, 8).map(item => <ItemsCart 
