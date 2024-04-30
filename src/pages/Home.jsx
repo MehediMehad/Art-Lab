@@ -7,6 +7,7 @@ import LatestWorks from "../components/LatestWorks";
 import OurTeam from "../components/OurTeam";
 import { Typewriter } from 'react-simple-typewriter'
 import { Helmet } from "react-helmet-async";
+import Footer from "../components/Footer";
 
 
 
@@ -93,6 +94,8 @@ const Home = () => {
             </div>
             <LatestWorks></LatestWorks>
             <OurTeam></OurTeam>
+            <Footer></Footer>
+
         </div>
         </>
     );
