@@ -1,10 +1,19 @@
+import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllArtCraftItems = () => {
     const item = useLoaderData()
 
+    useEffect(()=>{
+		window.scroll(0, 0)
+	},[])
     
     return (
+        <>
+        <Helmet>
+            <title>All Art List</title>
+        </Helmet>
         <div className="gap-10 lg:mx-24 grid grid-cols-4 my-5 mt-20" >
             {
                 item.map(p => <div key={p._id} className="card w-96 bg-base-100  shadow-xl rounded-none border-8  col-span-4 md:col-span-2 lg:col-span-1">
@@ -23,6 +32,7 @@ const AllArtCraftItems = () => {
             </div>  )
             }
         </div>
+        </>
     );
 };
 

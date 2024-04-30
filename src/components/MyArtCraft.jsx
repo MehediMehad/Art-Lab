@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyArtCraft = () => {
     const { user } = useContext(AuthContext)
@@ -65,6 +66,9 @@ const MyArtCraft = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Your Art</title>
+            </Helmet>
             <details className="dropdown border-none bg-[#ffed49] md:ml-24 my-10">
                 <summary className="m-1 btn bg-[#ffed49] border-none hover:bg-[#ffed49] text-slate-900 text-lg">Customization</summary>
                 <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-48">

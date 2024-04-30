@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Benner from "../components/Benner";
 import ItemsCart from "../components/ItemsCart";
 import { AuthContext } from "../provider/AuthProvider";
@@ -6,10 +6,14 @@ import { useLoaderData } from "react-router-dom";
 import LatestWorks from "../components/LatestWorks";
 import OurTeam from "../components/OurTeam";
 import { Typewriter } from 'react-simple-typewriter'
+import { Helmet } from "react-helmet-async";
 
 
 
 const Home = () => {
+    useEffect(()=>{
+		window.scroll(0, 0)
+	},[])
 
     // const {user} = useContext(AuthContext)
     const items = useLoaderData()
@@ -19,19 +23,22 @@ const Home = () => {
     if (loading) {
         return <p className="text-center text-5xl loading loading-spinner text-info"></p>
     }
+
     return (
+        <>
         <div>
+        <Helmet>
+            <title>Home</title>
+        </Helmet>
             <Benner></Benner>
             <div className="lg:mx-24 mt-20  mb-8 ">
             <div className="border-l-4 items-center content-center p-10 border-[#f314fa] ">
                 <p className="uppercase font-bold text-lg  text-[#8f33ff]">Art <span className="text-[#f314fa]">Lab</span></p>
-                {/* <p className="uppercase font-bold text-base text-[#f314fa]" >Provide</p> */}
             </div>
             <div className="py-5 px-10  w-56 border-b-4 border-[#f314fa]">
                 <p className="uppercase w-4/12 font-bold text-base text-[#8f33ff]">Deliver</p>
                 <p className="uppercase font-bold text-base text-[rgb(243,20,250)]" >
                 <span className="uppercase font-bold text-base text-[rgb(243,20,250)]" style={{  fontWeight: 'bold' }}>
-          {/* Style will be inherited from the parent element */}
           <Typewriter 
             words={[ 'Best Paintings']}
             loop={100}
@@ -47,7 +54,6 @@ const Home = () => {
                 <p className="uppercase font-bold text-base text-[#8f33ff]">Our Product</p>
                 <p className="uppercase font-bold text-base text-[rgb(243,20,250)]" >
                 <span className="uppercase font-bold text-base text-[rgb(243,20,250)]" style={{  fontWeight: 'bold' }}>
-          {/* Style will be inherited from the parent element */}
           <Typewriter 
             words={[ 'Latest ']}
             loop={100}
@@ -63,7 +69,6 @@ const Home = () => {
                 <p className="uppercase font-bold text-base text-[#8f33ff]">We Provide</p>
                 <p className="uppercase font-bold text-base text-[rgb(243,20,250)]" >
                 <span className="uppercase font-bold text-base text-[rgb(243,20,250)]" style={{  fontWeight: 'bold' }}>
-          {/* Style will be inherited from the parent element */}
           <Typewriter 
             words={[ 'Chip Cost']}
             loop={100}
@@ -89,6 +94,7 @@ const Home = () => {
             <LatestWorks></LatestWorks>
             <OurTeam></OurTeam>
         </div>
+        </>
     );
 };
 

@@ -4,10 +4,11 @@ import { toast } from 'react-toastify';
 import { useContext, useEffect, useState } from "react";
 import { BsEyeFill, BsEyeSlash } from "react-icons/bs"
 import { AuthContext } from "../provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
-    
-    const {createUser }= useContext(AuthContext)
+
+    const { createUser } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     const [showPassword, setShowPassword] = useState(false)
@@ -21,22 +22,27 @@ const Register = () => {
         const { email, password, image, fullName } = data
         console.log(image, fullName, email, password);
         createUser(email, password)
-        .then(result =>{
-            navigate(location?.state ? location.state : '/')
-            toast.success('Register Successfully')
-            console.log(result);
-        })
-        .catch(() => {
-            toast.error("email-already-in-use")
-        })
+            .then(result => {
+                navigate(location?.state ? location.state : '/')
+                toast.success('Register Successfully')
+                console.log(result);
+            })
+            .catch(() => {
+                toast.error("email-already-in-use")
+            })
     }
-    useEffect(()=>{
+    useEffect(() => {
         window.scroll(0, 0)
-    },[])
-    // createUser
+    }, [])
+
+
+
 
     return (
         <>
+            <Helmet>
+                <title>Register Page</title>
+            </Helmet>
 
             <div className="card shrink-0 md:w-[448px] md:mt-28 mx-auto shadow-2xl bg-base-100">
                 <h1 className="font-bold text-4xl mt-6 text-center">Register</h1>

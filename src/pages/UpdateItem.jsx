@@ -1,14 +1,15 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const UpdateItem = () => {
     const navigate = useNavigate()
 
     const item = useLoaderData()
-    const {_id, name, stock, processing, photo, price, rating, category, customization, description} =item
+    const { _id, name, stock, processing, photo, price, rating, category, customization, description } = item
     const { user } = useContext(AuthContext)
 
     const handleUpdateItem = e => {
@@ -24,7 +25,7 @@ const UpdateItem = () => {
         const photo = form.photo.value
         const processing = form.processing.value
         const email = user.email
-        const updatedItem = { email ,name, stock, processing, photo, price, rating, category, customization, description }
+        const updatedItem = { email, name, stock, processing, photo, price, rating, category, customization, description }
         console.log(updatedItem);
 
         // send data to the server
@@ -44,101 +45,113 @@ const UpdateItem = () => {
                         text: 'Updated Successfully ',
                         icon: 'success',
                         confirmButtonText: 'Okay'
-                      })
-                      navigate(location?.state ? location.state : '/myart')
+                    })
+                    navigate(location?.state ? location.state : '/myart')
                 }
             })
 
-            document.getElementById('myForm').reset();
+        document.getElementById('myForm').reset();
     }
-    
+
+    useEffect(() => {
+        window.scroll(0, 0)
+    }, [])
+
+
+
     return (
-        <div className="bg-[#F4F3F0] md:p-24 p-8">
-            <h1 className="text-3xl font-extrabold text-secondary">Update Art {name}</h1>
-            <form id='myForm' onSubmit={handleUpdateItem} >
-                {/* form row Name & stock */}
-                <div className="md:flex md:mb-4 gap-x-5">
-                    <div className="form-control md:w-1/2">
-                        <label className="">
-                            <div className="label">
-                                <span className="label-text text-lg font-semibold">Name</span>                        </div>
-                            <input type="text" required defaultValue={name} name="name" placeholder="Name" className="input input-bordered w-full" />
-                        </label>
+        <>
+            <Helmet>
+                <title>Update </title>
+            </Helmet>
+            <div className="bg-[#F4F3F0] md:p-24 p-8">
+                <h1 className="text-3xl font-extrabold text-secondary">Update Art {name}</h1>
+                <form id='myForm' onSubmit={handleUpdateItem} >
+                    {/* form row Name & stock */}
+                    <div className="md:flex md:mb-4 gap-x-5">
+                        <div className="form-control md:w-1/2">
+                            <label className="">
+                                <div className="label">
+                                    <span className="label-text text-lg font-semibold">Name</span>                        </div>
+                                <input type="text" required defaultValue={name} name="name" placeholder="Name" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2">
+                            <label className="">
+                                <div className="label">
+                                    <span className="label-text text-lg font-semibold">Stock</span>                        </div>
+                                <input type="text" required defaultValue={stock} name="stock" placeholder="Available Quantity" className="input input-bordered w-full" />
+                            </label>
+                        </div>
                     </div>
-                    <div className="form-control md:w-1/2">
-                        <label className="">
-                            <div className="label">
-                                <span className="label-text text-lg font-semibold">Stock</span>                        </div>
-                            <input type="text" required defaultValue={stock} name="stock" placeholder="Available Quantity" className="input input-bordered w-full" />
-                        </label>
+                    {/* form category & customization row*/}
+                    <div className="md:flex md:mb-4 gap-x-5">
+                        <div className="form-control md:w-1/2">
+                            <label className="">
+                                <div className="label">
+                                    <span className="label-text text-lg font-semibold">Category</span>                        </div>
+                                <input type="text" required defaultValue={category} name="category" placeholder="Category" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2">
+                            <label className="">
+                                <div className="label">
+                                    <span className="label-text text-lg font-semibold">Customization</span>                        </div>
+                                <input type="text" required defaultValue={customization} name="customization" placeholder="Customization" className="input input-bordered w-full" />
+                            </label>
+                        </div>
                     </div>
-                </div>
-                {/* form category & customization row*/}
-                <div className="md:flex md:mb-4 gap-x-5">
-                    <div className="form-control md:w-1/2">
-                        <label className="">
-                            <div className="label">
-                                <span className="label-text text-lg font-semibold">Category</span>                        </div>
-                            <input type="text" required defaultValue={category} name="category" placeholder="Category" className="input input-bordered w-full" />
-                        </label>
+                    {/* Photo Url */}
+                    <div className="md:flex md:mb-4">
+                        <div className="form-control w-full">
+                            <label className="">
+                                <div className="label">
+                                    <span className="label-text text-lg font-semibold">Photo Url</span>                        </div>
+                                <input type="text" required defaultValue={photo} name="photo" placeholder="Photo Url" className="input input-bordered w-full" />
+                            </label>
+                        </div>
                     </div>
-                    <div className="form-control md:w-1/2">
-                        <label className="">
-                            <div className="label">
-                                <span className="label-text text-lg font-semibold">Customization</span>                        </div>
-                            <input type="text" required defaultValue={customization} name="customization" placeholder="Customization" className="input input-bordered w-full" />
-                        </label>
+                    {/* description */}
+                    <div className="md:flex md:mb-4">
+                        <div className="form-control w-full">
+                            <label className="">
+                                <div className="label">
+                                    <span className="label-text text-lg font-semibold">Item Description</span>                        </div>
+                                <input type="text" required defaultValue={description} name="description" placeholder="Item Description" className="input input-bordered w-full" />
+                            </label>
+                        </div>
                     </div>
-                </div>
-                {/* Photo Url */}
-                <div className="md:flex md:mb-4">
-                    <div className="form-control w-full">
-                        <label className="">
-                            <div className="label">
-                                <span className="label-text text-lg font-semibold">Photo Url</span>                        </div>
-                            <input type="text" required defaultValue={photo} name="photo" placeholder="Photo Url" className="input input-bordered w-full" />
-                        </label>
+                    {/* form rating  & price & processing_time row*/}
+                    <div className="md:flex md:mb-4 gap-x-5">
+                        <div className="form-control md:w-1/3 ">
+                            <label className="">
+                                <div className="label">
+                                    <span className="label-text text-lg font-semibold">Rating</span>
+                                </div>
+                                <input type="text" required defaultValue={rating} name="rating" placeholder="Rating" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/3 ">
+                            <label className="">
+                                <div className="label">
+                                    <span className="label-text text-lg font-semibold">Price</span>
+                                </div>
+                                <input type="text" required defaultValue={price} name="price" placeholder="Price" className="input input-bordered w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control mb-4 md:w-1/3">
+                            <label className="">
+                                <div className="label">
+                                    <span className="label-text text-lg font-semibold">Processing Time</span>                        </div>
+                                <input type="text" required defaultValue={processing} name="processing" placeholder="Processing Time" className="input input-bordered w-full" />
+                            </label>
+                        </div>
                     </div>
-                </div>
-                {/* description */}
-                <div className="md:flex md:mb-4">
-                    <div className="form-control w-full">
-                        <label className="">
-                            <div className="label">
-                                <span className="label-text text-lg font-semibold">Item Description</span>                        </div>
-                            <input type="text" required defaultValue={description} name="description" placeholder="Item Description" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                </div>
-                {/* form rating  & price & processing_time row*/}
-                <div className="md:flex md:mb-4 gap-x-5">
-                    <div className="form-control md:w-1/3 ">
-                        <label className="">
-                            <div className="label">
-                                <span className="label-text text-lg font-semibold">Rating</span>
-                            </div>
-                            <input type="text" required defaultValue={rating} name="rating" placeholder="Rating" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                    <div className="form-control md:w-1/3 ">
-                        <label className="">
-                            <div className="label">
-                                <span className="label-text text-lg font-semibold">Price</span>
-                            </div>
-                            <input type="text" required defaultValue={price} name="price" placeholder="Price" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                    <div className="form-control mb-4 md:w-1/3">
-                        <label className="">
-                            <div className="label">
-                                <span className="label-text text-lg font-semibold">Processing Time</span>                        </div>
-                            <input type="text" required defaultValue={processing} name="processing" placeholder="Processing Time" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                </div>
-                <input type="submit" value="Update" className="btn btn-block hover:bg-[#D2B48C] text-xl text-[#331A15] bg-[#E3B77B]" />
-            </form>
-        </div>
+                    <input type="submit" value="Update" className="btn btn-block hover:bg-[#D2B48C] text-xl text-[#331A15] bg-[#E3B77B]" />
+                </form>
+            </div>
+
+        </>
     );
 };
 
