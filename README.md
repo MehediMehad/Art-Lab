@@ -17,6 +17,7 @@
 - Modern Design
 - Easy To Use
 - User Added Item Easily
+- User can update his product
 - Tailwind Css Framework
 - Design that is both contemporary and professional
 
@@ -25,5 +26,4 @@
 - Post Detail
 - Coming Soon
 - 404 
-- User Profile Update
-- Message Form
+- Team Section
